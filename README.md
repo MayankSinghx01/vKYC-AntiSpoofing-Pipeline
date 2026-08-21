@@ -1,4 +1,4 @@
-# vKYC-AntiSpoofing-Pipeline
+# vKYC AntiSpoofing Pipeline
 
 <img width="1536" height="1024" alt="vkyc_full_pipeline" src="https://github.com/user-attachments/assets/39f8dd80-3ab3-4b4d-b52a-ff3b3052a6c9" />
 
