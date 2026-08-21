@@ -1,8 +1,9 @@
 # vKYC-AntiSpoofing-Pipeline
 
-# Selfie Verification & Deepfake Detection — Fibe
+<img width="1536" height="1024" alt="vkyc_full_pipeline" src="https://github.com/user-attachments/assets/39f8dd80-3ab3-4b4d-b52a-ff3b3052a6c9" />
 
-**Machine Learning Internship — Computer Vision, Face Anti-Spoofing & Image Forensics**
+
+## **Machine Learning Internship — Computer Vision, Face Anti-Spoofing & Image Forensics**
 
 During my ML internship at Fibe, I worked on improving a selfie-based identity verification system used in their video-KYC (Know Your Customer) pipeline. The goal was to make the system more robust against fake or manipulated selfies — including photos of photos, screen replays, and AI-generated or deepfake images.
 
