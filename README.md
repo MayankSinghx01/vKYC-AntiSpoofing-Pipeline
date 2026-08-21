@@ -2,7 +2,6 @@
 
 <img width="1536" height="1024" alt="vkyc_full_pipeline" src="https://github.com/user-attachments/assets/39f8dd80-3ab3-4b4d-b52a-ff3b3052a6c9" />
 
-
 ## **Machine Learning Internship — Computer Vision, Face Anti-Spoofing & Image Forensics**
 
 During my ML internship at Fibe, I worked on improving a selfie-based identity verification system used in their video-KYC (Know Your Customer) pipeline. The goal was to make the system more robust against fake or manipulated selfies — including photos of photos, screen replays, and AI-generated or deepfake images.
@@ -78,7 +77,10 @@ A lower EAR indicates a more closed eye. EAR was combined with MediaPipe's blink
 ## 4. Identity Similarity — ArcFace
 
 Used **ArcFace** to generate a 512-dimensional embedding for each detected face, then compared it against recently stored embeddings using cosine similarity:
-sim(A, B) = (A · B) / (||A|| × ||B||)
+
+$$ \text{sim}(A, B) = \frac{A \cdot B}{\|A\| \|B\|} $$
+
+---
 
 ## 5. Image Authenticity & Forensic Signals
 
@@ -99,6 +101,9 @@ Estimated noise levels and compared them against a reference distribution built 
 
 Fine-tuned OpenAI's `clip-vit-large-patch14` (~428M parameters) for binary classification of AI-generated and deepfake images.
 
+**Dataset & Methodology:**
+The model was trained and validated on a custom internal dataset of **40,000 images** (20,000 genuine selfies, 10,000 AI-generated images, and 10,000 deepfakes).
+
 **Results:**
 
 | Task | Validation Accuracy |
@@ -107,6 +112,15 @@ Fine-tuned OpenAI's `clip-vit-large-patch14` (~428M parameters) for binary class
 | Deepfake detection | ~80% |
 
 These numbers reflect performance on the validation set used during the internship — a useful signal, but also a reminder that detectors trained this way can struggle to generalize to generation methods, datasets, or compression levels they weren't trained on.
+
+---
+
+## 7. Evaluated Baselines & Literature Review
+
+Before finalizing the multi-model architecture, several baselines from established repositories (such as DeepFakeBench) and academic literature were evaluated. These were ultimately excluded from the final production pipeline due to real-world deployment constraints:
+
+*   **[Insert Model/Paper 1]**: [Briefly explain why it was rejected—e.g., Inference latency was too high for a real-time vKYC pipeline].
+*   **[Insert Model/Paper 2]**: [Briefly explain the bottleneck—e.g., Struggled heavily with specific mobile compression artifacts or lacked generalizability across diverse lighting].
 
 ---
 
@@ -150,12 +164,3 @@ The main takeaway: real-world image verification isn't about picking one "best" 
 ## Technologies
 
 · Python · PyTorch · OpenCV · MediaPipe · YOLOv8 · MobileCLIP2 · MiniFASNet · ArcFace · CLIP · Vision Transformers · ONNX Runtime · C2PA
-
----
-
-## Repository Structure
-```text
-.
-├── README.md
-├── requirements.txt
-└── .gitignore
